@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chow Chief</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+    </head>
+    <body>
+	
+	<table id="home">
+            <tr>
+                <th><a href="#home">Chow Chief</a></th>
+                <th><a href="#breakfast">Breakfast</a></th>
+                <th><a href="#lunch">Lunch</a></th>
+                <th><a href="#dinner">Dinner<a/></th>
+            </tr>
+        </table>
+	<h1>Chow Chief</h1><br><br>
+	
+	<img src="breakfastinter.PNG" id="breakfast" onmouseover="hover(this);" onmouseout="unhover(this);">
+	<h2>Breakfast</h2>
+
+	<a href="breakfast.html" id= "simpbreak">Simple
+		<p id="simpbreak">For those mornings when you have 1 minute or less</p></a><br>
+	<a href="breakfast.html" id="inter">Not As Simple
+		<p id="inter">When you've got a solid five minutes to 'treat yo' self'</p></a><br>
+	<a href="breakfast.html" id="extrav">Extravagant
+		<p id="extrav">For when that DTR is gonna happen over breakfast and everything's on the line</p></a><br><br><br>
+	
+		
+	<img src="lunch.PNG" id="lunch">
+	<h2>Lunch</h2>
+
+	<a href="lunch.html" id="simp">Simple
+		<p id="simp">For those afternoons when you have 1 minute or less</p></a><br>
+	<a href="lunch.html" id="inter">Not As Simple
+		<p id="inter">When you've got a solid five minutes to 'treat yo' self'</p></a><br>
+	<a href="lunch.html" id = "extrav">Extravagant
+		<p id="extrav">For when that DTR is gonna happen over lunch and everything's on the line</p></a><br><br><br>
+		
+	<img src="dinner.PNG" id="dinner">
+	<h2>Dinner</h2>
+
+	<a href="dinner.html" id="simp">Simple
+		<p id="simp">For those nights when you have 1 minute or less</p></a><br>
+	<a href="dinner.html" id="inter">Not As Simple
+		<p id = "inter">When you've got a solid five minutes to 'treat yo' self'</p></a><br>
+	<a href="dinner.html" id="extrav">Extravagant
+		<p id="extrav">For when that DTR is gonna happen over dinner and everything's on the line</p></a><br><br><br>
+
+<script>
+function hover(element) {
+    element.setAttribute('src', 'breakfastsimp.PNG');
+}
+function unhover(element) {
+    element.setAttribute('src', 'breakfastinter.PNG');
+}
+</script>
+		
+    </body>
+</html>
