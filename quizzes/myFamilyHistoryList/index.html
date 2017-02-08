@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 <style>
   body {	
     background-image:url("./genealogy.jpg");
     background-size:cover;
     background-repeat:no-repeat;
     background-attachment:fixed;
-  }	
+  }
+  #main {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: 'Playfair Display', serif;
+  }
+  #checklist {
+    background-color:#54A65F;
+  }
+  h1 {
+    font-weight:900;
+    font-size:50px;
+    background-color:#54A65F;
+    padding:20px;
+    margin:0px;
+    width:100%;
+  }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body ng-app="myApp" ng-controller="todoCtrl">
+<h1>My Family History List</h1>
 
-<h2>My Family History List</h2>
-
+<div id="main">
 <form ng-submit="todoAdd()">
     <input type="text" ng-model="todoInput" size="20" placeholder="Person">
     <input type="text" ng-model="father" size="20" placeholder="Father">
@@ -22,12 +40,12 @@
 
 <br>
 
-<div ng-repeat="x in todoList">
+<div ng-repeat="x in todoList" id="checklist">
     <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
 </div>
 
 <p><button ng-click="remove()">Remove marked</button></p>
-
+</div>
 <script>
 var app = angular.module('myApp', []); 
 app.controller('todoCtrl', function($scope) {
