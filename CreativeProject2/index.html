@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Converter</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+<style>
+  body {
+    font-family:'Roboto Condensed', sans-serif;
+    background-image:url("https://static.pexels.com/photos/47344/dollar-currency-money-us-dollar-47344.jpeg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    color:white;
+    margin:0px;
+  }
+  #formulaire {
+    position:relative;
+    top:100px;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    background-color:black;
+    opacity:.8;
+    padding:30px;
+  }
+  h1 {
+    font-size:50pt;
+  }
+  ul {
+    list-style-type:none;
+  }
+  #results {
+    text-align:center;
+    padding-left:0;
+    font-size:50px;
+  }
+  #item {
+    background-color:#F97B70;
+    padding:15px;
+  }
+  #item:nth-child(odd) {
+    background-color:#F9B0A9;
+  }
+</style>
+
+</head>
+<body>
+
+<div id="formulaire">
+<h1>Welcome to the coolest money converter</h1>
+<form>
+Convert <input type="text" id="inputCurrency" value="" size="20" placeholder="ex: USD"> to
+        <input type="text" id="outputCurrency" value="" size="20" placeholder="ex: EUR"><br><br>
+Amount to convert 
+        <input type="text" id="toConvert" value="" size="20" placeholder="ex: 1000"><br><br>
+        <input id="calculateButton" type="submit" value="Calculate"><br><br>
+<div id="results"><span id="searchResults"></span></div>
+</form>
+
+<script>
+$(document).ready(function() {
+  $("#calculateButton").click(function(e){
+    var input = $("#inputCurrency").val();
+    var output = $("#outputCurrency").val();
+    var toConvert = $("#toConvert").val();
+    console.log(input);
+    console.log(output);
+    console.log(toConvert);
+    e.preventDefault();
+    var myurl= "http://api.fixer.io/latest?symbols=";
+    myurl += input + "," + output;
+    console.log(myurl);
+    $.ajax({
+      url : myurl,
+      dataType : "json",
+      success : function(parsed_json) {
+        var inputRate = parsed_json.rates.USD;
+        var outputRate = parsed_json.rates.GBP;
+        everything = toConvert * outputRate / inputRate;
+        $("#searchResults").html(everything.toFixed(2));
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
