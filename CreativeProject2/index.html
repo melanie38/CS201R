@@ -77,8 +77,8 @@ $(document).ready(function() {
       url : myurl,
       dataType : "json",
       success : function(parsed_json) {
-        var inputRate = parsed_json.rates.USD;
-        var outputRate = parsed_json.rates.GBP;
+        var inputRate = parsed_json.rates[input];
+        var outputRate = parsed_json.rates[output];
         everything = toConvert * outputRate / inputRate;
         $("#searchResults").html(everything.toFixed(2));
       }
