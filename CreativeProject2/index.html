@@ -26,6 +26,12 @@
     opacity:.8;
     padding:30px;
   }
+  #options {
+    text-align:left;
+    width: 200px;
+    margin-right:auto;
+    margin-left:auto;
+    }
   h1 {
     font-size:50pt;
   }
@@ -54,6 +60,8 @@
 <form>
 Convert <input type="text" id="inputCurrency" value="" size="20" placeholder="ex: USD"> to
         <input type="text" id="outputCurrency" value="" size="20" placeholder="ex: EUR"><br><br>
+        <input id="optionsButton" type="submit" value="Options"> <br><br>
+        <div id="options"></div> <br><br>
 Amount to convert 
         <input type="text" id="toConvert" value="" size="20" placeholder="ex: 1000"><br><br>
         <input id="calculateButton" type="submit" value="Calculate"><br><br>
@@ -62,6 +70,7 @@ Amount to convert
 
 <script>
 $(document).ready(function() {
+  $("#options").hide(); 
   $("#calculateButton").click(function(e){
     var input = $("#inputCurrency").val();
     var output = $("#outputCurrency").val();
@@ -83,6 +92,12 @@ $(document).ready(function() {
         $("#searchResults").html(everything.toFixed(2));
       }
     });
+  });
+  $("#optionsButton").click(function(e) {
+    e.preventDefault();
+    everything = "AUD: Australian Dollar<br>BGN: Bulgaria Lev<br>BRL: Brazil Real<br>CAD: Canada Dollar<br>CNY: China Yuan<br>    CZK: Czech Koruna<br>DKK: Denmark Krone<br>GBP: Great Britain Pound<br>HKD: Hong Kong Dollar<br>HRK: Croatia Kuna<br>HUF: Hungary Forint<br>IDR: Indonesia Rupiah<br>INR: India Rupee<br>JPY: Japan Yen<br>KRW: South Korea Won<br>MXN: Mexico Peso<br>MYR: Malaysia Ringgit<br>NOK: Norway Kroner<br>NZD: New Zealand Dollar<br>PHP: Philippines Peso<br>PLN: Poland Zloty<br>RON: Romania New Lei<br>RUB: Russia Rouble<br>SEK: Sweden Krona<br>SGD: Singapore Dollar<br>THB: Thailand Baht<br>TRY: Turkish New Lira<br>USD: USA Dollar<br>ZAR: South Africa Rand";
+    $("#options").html(everything);
+    $("#options").toggle(everything);
   });
 });
 </script>
