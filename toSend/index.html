@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="javascripts/app.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Clicker+Script|Open+Sans" rel="stylesheet"> 
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8">
+  <title>The Dating Game</title>
+</head>
+<body>
+
+<div class="left col-xs-0 col-md-3 left-column"></div>
+
+<div class="main col-xs-12 col-md-6 center">
+
+  <p class="title">The Dating Game</p>      
+  <img class="photo" src="images/dating-quotes-2.jpg" height="400px"> 
+  <p class="subtitle sub-section">We'll plan the date for you!</p>
+  <p class="content sub-section"> 
+  <div id='app' ng-app='app' ng-controller='mainCtrl'>
+
+<<<<<<< HEAD
+    <input type="submit" value="I'm a man" ng-model="man" ng-click="getWomen()">
+    <input type="submit" value="I'm a woman" ng-model="woman" ng-click="getMen()">
+
+<!--
+    <div ng-if='!pokemon.length' class='no-pokemon center stretch'>
+      <h1 class='h1'>
+        Set up your endpoint at `/pokemon` to get this view working
+      </h1>
+    </div>
+-->
+    <ul class='list center stretch'>
+      <li ng-repeat='p in pokemon' ng-click="getActivity()" class='pokemon'>
+        <h1>{{ p.name }}</h1>
+        <img class='avatar' ng-src="{{p.avatarUrl}}" />
+      </li>
+    </ul>
+<!--
+    <ul>
+    <li ng-if="inactivity" ng-model='a in pokemon' class='activity'>
+      <h1 class='h1'>
+        {{ a.name }}
+      </h1>
+    </li>
+    </ul>
+-->
+=======
+      <input type="submit" value="I'm a man" ng-model="man" ng-click="man = true">
+      <input type="submit" value="I'm a woman" ng-model="woman" ng-click="woman = true">
+
+      <div ng-if='gender' class='list activities'>
+         <li ng-repeat='a in activity' class='activity'>
+           <h1>{{ a.type }}</h1>
+           <p>{{ a.name }}</p>
+         </li>
+      </div>
+
+      <ul ng-if='man' class='list center stretch'>
+        <li ng-repeat='p in pokemon' class='pokemon'>
+          <h1>{{ p.name }}</h1>
+          <img class='avatar' ng-src="{{p.avatarUrl}}" />
+        </li>
+      </ul>
+
+      <ul ng-if='woman' class='list center stretch'>
+        <li ng-repeat='p in pokemon' class='pokemon'>
+          <h1>{{ p.name }}</h1>
+          <img class='avatar' ng-src="{{p.avatarUrl}}" />
+        </li>
+      </ul>
+
+
+        <p class="sub-section"> (output the) date's name
+        </p>
+        <p class="sub-section"> (output the) activity
+        </p>
+        <p class="sub-section"> (output the) s/he will pay
+        </p>
+        <p class="sub-section"> (output the) day of the week
+        </p>
+        <p class="filler">
+        </p>
+        <p class="footer">
+        Made for and used by Provo
+        </p>
+>>>>>>> c7ebaa0576225e7f72fd9ccb3755be95226f02b4
+  </div>
+</div>
+<div class="right col-xs-0 col-md-3 left-column"></div>
+
+</body>
+</html>
